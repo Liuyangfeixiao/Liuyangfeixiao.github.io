@@ -24,16 +24,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LiuYang&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
+  <meta name="description" content="LeetCode 316 去除重复字母">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode-316-去除重复字母">
+<meta property="og:url" content="http://example.com/2020/12/20/LeetCode-316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D/index.html">
 <meta property="og:site_name" content="LiuYang&#39;s Blog">
+<meta property="og:description" content="LeetCode 316 去除重复字母">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-20T06:53:55.000Z">
+<meta property="article:modified_time" content="2020-12-20T07:16:55.913Z">
 <meta property="article:author" content="Liuyangfeixiao">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="单调栈">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+<link rel="canonical" href="http://example.com/2020/12/20/LeetCode-316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D/">
 
 
 <script class="page-configurations">
@@ -41,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 动态规划 | LiuYang's Blog</title>
+  <title>LeetCode-316-去除重复字母 | LiuYang's Blog</title>
   
 
 
@@ -157,7 +163,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -170,6 +176,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 316 去除重复字母</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -223,54 +230,118 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">动态规划
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/20/LeetCode-316-%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Liuyangfeixiao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiuYang's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode-316-去除重复字母
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2020-12-20 14:53:55 / 修改时间：15:16:55" itemprop="dateCreated datePublished" datetime="2020-12-20T14:53:55+08:00">2020-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="LeetCode-316-去除重复字母"><a href="#LeetCode-316-去除重复字母" class="headerlink" title="LeetCode 316 去除重复字母"></a>LeetCode 316 去除重复字母</h1><a id="more"></a>
+<p>题目描述：</p>
+<p>给你一个字符串 <code>s</code> ，请你去除字符串中重复的字母，使得每个字母只出现一次。需保证 <strong>返回结果的字典序最小</strong>（要求不能打乱其他字符的相对位置）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s &#x3D; &quot;bcabc&quot;</span><br><span class="line">输出：&quot;abc&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s &#x3D; &quot;cbacdcbc&quot;</span><br><span class="line">输出：&quot;acdb&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 104</code></li>
+<li><code>s</code> 由小写英文字母组成</li>
+</ul>
+<p><strong>分析：</strong></p>
+<p>要去除字符串中的重复字符，</p>
+<ol>
+<li>我们需要依次遍历字符串的每个字符，用一个单调栈保留处理过的字符</li>
+<li>若当前遍历的字符在栈中，则直接抛弃</li>
+<li>否则将当前遍历的字符与栈顶的字符比较，若是大于，则判断栈顶字符是否可以弹出</li>
+<li>若是栈顶的字符在后续字符中无重复，则不可出栈，进行下一次遍历</li>
+</ol>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">removeDuplicateLetters</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">map</span><span class="params">(<span class="number">26</span>, <span class="number">0</span>)</span></span>; <span class="comment">// 哈希表，保留未遍历的字符重复个数</span></span><br><span class="line">    <span class="built_in">string</span> ans = <span class="string">&quot;&quot;</span>; <span class="comment">// 字符串当栈</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> ch : s) &#123;</span><br><span class="line">        <span class="built_in">map</span>[ch - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> ch : s) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ans.find(ch) != <span class="built_in">string</span>::npos)</span><br><span class="line">            <span class="built_in">map</span>[ch-<span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">while</span> (!ans.empty() &amp;&amp; ch &lt; ans.back() &amp;&amp; <span class="built_in">map</span>[ans.back()-<span class="string">&#x27;a&#x27;</span>]) &#123;</span><br><span class="line">            ans.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">        ans += ch;</span><br><span class="line">        <span class="built_in">map</span>[ch - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-05T19:20:10+08:00"
-              content="2020-11-05">
-          11-05
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/05/LeetCode-300-%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/" itemprop="url">
-            <span itemprop="name">LeetCode 300 最长上升子序列</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+              <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="tag"># 单调栈</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/12/11/LeetCode-649-Dota2-%E5%8F%82%E8%AE%AE%E9%99%A2/" rel="prev" title="LeetCode 649 Dota2 参议院">
+                  <i class="fa fa-chevron-left"></i> LeetCode 649 Dota2 参议院
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
-  
+
 
 
 
