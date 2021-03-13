@@ -195,7 +195,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -328,7 +328,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/09/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/03/09/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="post-title-link" itemprop="url">面试准备</a>
         </h2>
 
         <div class="post-meta-container">
@@ -346,7 +346,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-12 21:53:11" itemprop="dateModified" datetime="2021-03-12T21:53:11+08:00">2021-03-12</time>
+        <time title="修改时间：2021-03-13 23:56:22" itemprop="dateModified" datetime="2021-03-13T23:56:22+08:00">2021-03-13</time>
       </span>
 
   
@@ -359,70 +359,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h1><h2 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h2><h4 id="虚函数的机制"><a href="#虚函数的机制" class="headerlink" title="虚函数的机制"></a>虚函数的机制</h4><p>虚函数是必须在class里面声明的函数，以 virtual 关键字声明。</p>
-<p>所有虚函数的地址都会放在所属的类的虚函数表 V-table 中，基类中声明的虚函数，继承到子类中依然是虚函数，也会放在子类的虚函数表中。虚函数表的指针存在对象实例的最前。 </p>
-<p>虚函数的创建：</p>
-<p>基类：首先在基类声明中找到所有的虚函数，按照其声明顺序，编码0,1,2,3,4……，然后按照此声明顺序为基类创建一个虚函数表，其内容就是指向这些虚函数的函数指针，按照虚函数声明的顺序将这些虚函数的地址填入虚函数表中</p>
-<p>子类：首先将基类的虚函数表复制到该子类的虚函数表中。若子类重写了基类的虚函数show，则将子类的虚函数表中存放show的函数地址(未重写前存放的是基类的show虚函数的函数地址)更新为重写后函数的函数指针。若子类增加了一些虚函数的声明，则将这些虚函数的地址加到该类虚函数表的后面</p>
-<p>虚函数表的访问：</p>
-<ol>
-<li>首先判断指针所指的函数是否是虚函数，是则采用动态联编（使用虚函数表确定调用的函数），不是则采用静态编译（由调用指针的类型决定调用哪个类的成员函数）</li>
-<li>如果是虚函数，则访问指向对象的虚函数表。</li>
-<li>找到函数在基类虚函数表中的位序</li>
-<li>在对象类的虚函数表中找到同样位序的函数，调用此函数</li>
-</ol>
-<p>虚函数表与类绑定，所有对象共享一个虚函数表，对象首地址存放的是指向虚函数表的指针</p>
-<p><strong>重载：</strong> 同一个类中，函数名相同，参数和返回值类型可以不同</p>
-<p><strong>重写：</strong> 子类重写父类的虚函数，参数和返回类型必须相同，不能有static</p>
-<p><strong>隐藏：</strong> 子类隐藏父类的函数，只要是同名函数，父类函数都会被隐藏</p>
-<h4 id="栈和堆"><a href="#栈和堆" class="headerlink" title="栈和堆"></a>栈和堆</h4><p>32位系统中，一个进程<strong>4GB的虚拟内存空间</strong>，128M的不可访问区，1G的内核空间，3G的用户空间。</p>
-<p>区别：</p>
-<ol>
-<li>管理方式不同，堆空间由程序员用new和delete申请和释放，栈由编译器在需要的时候分配，不需要的时候自动清楚</li>
-<li>空间大小不同，Linux下栈的默认大小为8MB，堆的大小理论上来说可以占满整个用户空间</li>
-<li>栈由高地址向低地址扩展。堆由低地址向高地址扩展</li>
-<li>只要栈的剩余空间大于程序申请的空间就可以分配，否则异常提示栈溢出</li>
-<li>操作系统有记录空闲内存地址的链表，系统收到程序的申请时遍历该链表，找到第一个满足申请空间的堆节点，分配空间</li>
-<li>频繁的new和delete会产生内存碎片</li>
-</ol>
-<p>全局变量定义在头文件中会出现重定义错误，每一个包含该头文件的源文件都会重新定义这个变量，extern关键字解决，extern是声明，不是定义</p>
-<p>static把这个变量的作用域限制在此文件内，如果有其他文件引用此变量会产生引用错误</p>
-<p>静态局部变量只有在程序结束时才会被销毁</p>
-<p>.h文件中一般只放函数声明，防止编译阶段出现重定位错误</p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>空类占一字节，编译时自动生成6个成员函数：构造函数，析构函数，拷贝函数，赋值运算符，取址运算符，取址运算符常量版本</p>
-<p>拷贝构造函数必须为引用是为了防止无限次的递归调用构造函数造成栈溢出</p>
-<h4 id="C-类对象的初始化顺序"><a href="#C-类对象的初始化顺序" class="headerlink" title="C++ 类对象的初始化顺序"></a>C++ 类对象的初始化顺序</h4><p>-&gt; 基类的构造函数</p>
-<p>-&gt;派生类成员变量的构造函数</p>
-<p>-&gt; 派生类自己的构造函数</p>
-<p>析构顺序与构造顺序相反</p>
-<h4 id="为什么用成员初始化列表会块一些"><a href="#为什么用成员初始化列表会块一些" class="headerlink" title="为什么用成员初始化列表会块一些"></a>为什么用成员初始化列表会块一些</h4><p>如果不用成员初始化列表，在类的构造函数之前成员变量调用默认构造函数初始化，之后在类的构造函数体中调用成员变量的构造函数。成员函数列表直接调用了成员函数对应的构造函数，减少了默认构造函数的调用。</p>
-<h4 id="memcpy函数"><a href="#memcpy函数" class="headerlink" title="memcpy函数"></a>memcpy函数</h4><p>实现：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有判断内存覆盖</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">mymemcpy</span><span class="params">(<span class="keyword">void</span>* dest, <span class="keyword">const</span> <span class="keyword">void</span>* src, <span class="keyword">size_t</span> num)</span> </span>&#123;</span><br><span class="line">    assert((des != <span class="literal">NULL</span>) &amp;&amp; (src != <span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span>* pdes = (<span class="keyword">unsigned</span> <span class="keyword">char</span> *)des;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span>* psrc = (<span class="keyword">unsigned</span> <span class="keyword">char</span> *)src;</span><br><span class="line">    <span class="keyword">while</span> (num--) &#123;</span><br><span class="line">        *pdes++ = *psrc++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> des;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 内存覆盖版本</span></span><br><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">mymemcpy</span><span class="params">(<span class="keyword">void</span>* dest, <span class="keyword">const</span> <span class="keyword">void</span>* src, <span class="keyword">size_t</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (dest == <span class="literal">nullptr</span> || src == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">char</span>* pdest;</span><br><span class="line">    <span class="keyword">char</span>* psrc;</span><br><span class="line">    <span class="keyword">if</span> (src+num &gt; dest || dest+num &gt; src) &#123;</span><br><span class="line">        pdest = (<span class="keyword">char</span>*)dest + num - <span class="number">1</span>;</span><br><span class="line">        psrc = (<span class="keyword">char</span>*)src + num - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (num--) &#123;</span><br><span class="line">            pdest-- = psrc--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        pdest = (<span class="keyword">char</span>*)dest;</span><br><span class="line">        psrc = (<span class="keyword">char</span>*) src;</span><br><span class="line">        <span class="keyword">while</span> (num--) &#123;</span><br><span class="line">            pdest++ = psrc++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>提高效率，对齐的地址按cpu字长拷贝，不对齐的时候按照一个字节一个字节拷贝</p>
-<h4 id="new-与-malloc-的区别"><a href="#new-与-malloc-的区别" class="headerlink" title="new 与 malloc 的区别"></a>new 与 malloc 的区别</h4><p>malloc free 都是库函数，new 和 delete都是关键字</p>
-<p>new 申请空间时，无需指定分配空间的大小，malloc需要指明空间的大小</p>
-<p>new 分配失败会抛出bad-alloc 异常，malloc 会返回空指针</p>
-<p>delete 首先执行该对象的析构函数，之后调用 operator delete 来释放所占的内存空间</p>
-<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h3><p>第一次握手：</p>
-<p>建立连接时，客户端向服务器发送（SYN）请求建立连接包（syn=x），进入SYN_SEND 状态，等待服务器确认。SYN = 同步序列编号</p>
-<p>第二次握手：</p>
-<p>服务器收到（SYN）请求建立连接报文，必须确认客户的SYN包（ack = x+1），向客户端发送ACK包，同时自己也发送一个SYN（syn=k）包，此时服务器进入SYN_RECV状态</p>
-<p>第三次握手：</p>
-<p>客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK（ack=k+1），发送完毕后，客户端和服务器进入ESTABLISHED状态，此时TCP连接成功，三次握手完成</p>
-<h3 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a>TCP 四次挥手</h3><ol>
-<li>客户端发出连接释放报文，FIN = 1 seq = u，并且停止发送数据，客户端进入终止等待1阶段</li>
-<li>服务器收到客户端发送的连接释放报文，发出确认报文（ACK=1, ack=u+1），并且带上自己的序列号(syn=v)，此时服务器端就进入了CLOSE_WAIT关闭等待阶段，服务器将最后的数据发出</li>
-<li>客服端收到服务器发出的确认报文后，客户端就进入了终止等待2阶段等待服务器发送连接释放报文，在此之前客户端还需要接受服务器发送的最后的数据</li>
-<li>服务器将最后的数据发送完后，向客户端发送连接释放报文，此时假定报文的序列号为w，服务器进入了LAST_ACK（最后确认）阶段，等待客户端的确认</li>
-<li>客户端收到连接释放报文后，发出确认报文，ack=w+1，seq=u+1，此时客户端进入了 TIME_WAIT阶段，但TCP连接还未释放，必须经历两个MSL即最大报文寿命后，客户端才撤销相应的TCB，进入CLOSED状态</li>
-<li>服务器收到了客户端发出的确认报文后，立刻进入CLOSED状态，之后服务器端撤销相关的TCB，结束这次TCP连接</li>
-</ol>
-<h4 id="TIMEWAIT-有什么用，为什么要等这个时间"><a href="#TIMEWAIT-有什么用，为什么要等这个时间" class="headerlink" title="TIMEWAIT 有什么用，为什么要等这个时间"></a>TIMEWAIT 有什么用，为什么要等这个时间</h4><p>我们必须假设网络是不可靠的，假设最后一个ACK报文丢失，服务器端没有收到ACK报文将重复发送FIN报文，假如客户端在TIMEWAIT这段时间内能够收到FIN报文，那么客户端重新发送ACK报文，MSL是最大报文生存时间，2MSL就是一个报文发送和一个回复所需的最大时间。</p>
-<h4 id="为什么连接的时候是3次握手，释放连接的时候是四次挥手"><a href="#为什么连接的时候是3次握手，释放连接的时候是四次挥手" class="headerlink" title="为什么连接的时候是3次握手，释放连接的时候是四次挥手"></a>为什么连接的时候是3次握手，释放连接的时候是四次挥手</h4><p>当服务器端收到客户端的申请连接报文后，可以直接发送SYN报文和ACK报文，同时进行同步和确认。但当释放连接时，服务器端收到释放连接的报文时，并不会直接关闭SOCKET，所以只能先发送一个确认报文给客户端，等待所有数据都发送完毕后，才向客户端发送连接释放报文，所以需要四次挥手</p>
-<h4 id="为什么不用两次握手建立连接（TCP握手为什么需要三次）"><a href="#为什么不用两次握手建立连接（TCP握手为什么需要三次）" class="headerlink" title="为什么不用两次握手建立连接（TCP握手为什么需要三次）"></a>为什么不用两次握手建立连接（TCP握手为什么需要三次）</h4><p>3次握手完成了两个重要的功能，一是双方做好发送数据的准备工作，二是双方就初始序列号进行协商。如果把3次握手改成两次握手，那么可能发生死锁，首先客户端向服务器端发送SYN报文，服务器端收到后向客户端发送SYN和ACK报文，但是ACK报文在传输的过程中可能丢失，此时服务器端认为连接已经建立，开始发送数据，但客户端没有收到ACK报文，认为连接还未建立，忽略服务器端发来的数据，只等待确认报文，而服务器端在发出的分组超时后，重复发出同样的数据，造成死锁。</p>
-<h4 id="如果已经建立了连接，但客户端出故障了怎么办"><a href="#如果已经建立了连接，但客户端出故障了怎么办" class="headerlink" title="如果已经建立了连接，但客户端出故障了怎么办"></a>如果已经建立了连接，但客户端出故障了怎么办</h4><p>TCP设有一个保活计时器，时间通常设为2小时，客户端如果出现故障，服务器端也不会一直等待下去，如果在计时器内没有收到客户端的任何数据，服务器就会每隔75s发出一个探测报文段，如果发送了10个报文段客户端依旧没有发送任何数据，服务器就关闭连接。</p>
-<h4 id="HTTP与HTTPS有什么区别"><a href="#HTTP与HTTPS有什么区别" class="headerlink" title="HTTP与HTTPS有什么区别"></a>HTTP与HTTPS有什么区别</h4><p>HTTP传输的协议都是未加密的，所以非常不安全，https 是由 ssl 和http构建的可进行加密传输，身份认证的网络协议，要比http协议安全。http的默认端口为80，https协议的默认端口为443</p>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2>
+          <h1 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h1><h2 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/09/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

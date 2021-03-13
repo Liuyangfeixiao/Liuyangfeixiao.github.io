@@ -24,16 +24,18 @@
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="面试准备C++基础虚函数的机制虚函数是必须在class里面声明的函数，以 virtual 关键字声明。 所有虚函数的地址都会放在所属的类的虚函数表 V-table 中，基类中声明的虚函数，继承到子类中依然是虚函数，也会放在子类的虚函数表中。虚函数表的指针存在对象实例的最前。  虚函数的创建： 基类：首先在基类声明中找到所有的虚函数，按照其声明顺序，编码0,1,2,3,4……，然后按照此声明顺序为基">
+  <meta name="description" content="面试准备C++基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LiuYang&#39;s Blog">
+<meta property="og:title" content="面试准备">
 <meta property="og:url" content="http://example.com/2021/03/09/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/index.html">
 <meta property="og:site_name" content="LiuYang&#39;s Blog">
-<meta property="og:description" content="面试准备C++基础虚函数的机制虚函数是必须在class里面声明的函数，以 virtual 关键字声明。 所有虚函数的地址都会放在所属的类的虚函数表 V-table 中，基类中声明的虚函数，继承到子类中依然是虚函数，也会放在子类的虚函数表中。虚函数表的指针存在对象实例的最前。  虚函数的创建： 基类：首先在基类声明中找到所有的虚函数，按照其声明顺序，编码0,1,2,3,4……，然后按照此声明顺序为基">
+<meta property="og:description" content="面试准备C++基础">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-09T03:55:23.874Z">
-<meta property="article:modified_time" content="2021-03-12T13:53:11.418Z">
+<meta property="article:modified_time" content="2021-03-13T15:56:22.770Z">
 <meta property="article:author" content="Liuyangfeixiao">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 
@@ -50,7 +52,7 @@
   };
 </script>
 
-  <title> | LiuYang's Blog</title>
+  <title>面试准备 | LiuYang's Blog</title>
   
 
 
@@ -174,7 +176,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">面试准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.1.</span> <span class="nav-text">C++基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">虚函数的机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%88%E5%92%8C%E5%A0%86"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">栈和堆</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">C++ 类对象的初始化顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E4%BC%9A%E5%9D%97%E4%B8%80%E4%BA%9B"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">为什么用成员初始化列表会块一些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#memcpy%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">memcpy函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-%E4%B8%8E-malloc-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">new 与 malloc 的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.2.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">TCP三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP 四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TIMEWAIT-%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%AD%89%E8%BF%99%E4%B8%AA%E6%97%B6%E9%97%B4"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">TIMEWAIT 有什么用，为什么要等这个时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF3%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E9%87%8A%E6%94%BE%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">为什么连接的时候是3次握手，释放连接的时候是四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%EF%BC%88TCP%E6%8F%A1%E6%89%8B%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%B8%89%E6%AC%A1%EF%BC%89"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">为什么不用两次握手建立连接（TCP握手为什么需要三次）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E5%BB%BA%E7%AB%8B%E4%BA%86%E8%BF%9E%E6%8E%A5%EF%BC%8C%E4%BD%86%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%87%BA%E6%95%85%E9%9A%9C%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">如果已经建立了连接，但客户端出故障了怎么办</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP%E4%B8%8EHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">HTTP与HTTPS有什么区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.3.</span> <span class="nav-text">操作系统</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">面试准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.1.</span> <span class="nav-text">C++基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">虚函数的机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%88%E5%92%8C%E5%A0%86"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">栈和堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%99%90%E5%88%B6%E7%B1%BB%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%8F%AA%E8%83%BD%E5%9C%A8%E5%A0%86%E4%B8%8A%E5%88%9B%E5%BB%BA"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">如何限制类的对象只能在堆上创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%90%E5%88%B6%E7%B1%BB%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%8F%AA%E8%83%BD%E5%9C%A8%E6%A0%88%E4%B8%8A%E5%88%9B%E5%BB%BA"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">限制类的对象只能在栈上创建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">C++ 类对象的初始化顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8%E4%BC%9A%E5%9D%97%E4%B8%80%E4%BA%9B"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">为什么用成员初始化列表会块一些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#memcpy%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">memcpy函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new-%E4%B8%8E-malloc-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">new 与 malloc 的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">内存泄漏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%98%B2%E6%AD%A2%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">如何防止内存泄漏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.1.1.7.</span> <span class="nav-text">智能指针</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.1.2.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">什么是模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%E4%B8%8E%E7%B1%BB%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">函数模板与类模板的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">什么是可变参数模板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%A8%A1%E6%9D%BF%E7%89%B9%E5%8C%96%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E7%89%B9%E5%8C%96%EF%BC%9F"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">什么是模板特化，为什么特化？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">静态链接与动态链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.2.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">TCP三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP 四次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TIMEWAIT-%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%AD%89%E8%BF%99%E4%B8%AA%E6%97%B6%E9%97%B4"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">TIMEWAIT 有什么用，为什么要等这个时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF3%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E9%87%8A%E6%94%BE%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">为什么连接的时候是3次握手，释放连接的时候是四次挥手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%EF%BC%88TCP%E6%8F%A1%E6%89%8B%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%B8%89%E6%AC%A1%EF%BC%89"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">为什么不用两次握手建立连接（TCP握手为什么需要三次）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%B7%B2%E7%BB%8F%E5%BB%BA%E7%AB%8B%E4%BA%86%E8%BF%9E%E6%8E%A5%EF%BC%8C%E4%BD%86%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%87%BA%E6%95%85%E9%9A%9C%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">如果已经建立了连接，但客户端出故障了怎么办</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP%E4%B8%8EHTTPS%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">HTTP与HTTPS有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-%E4%B8%8E-UDP-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.2.6.</span> <span class="nav-text">TCP 与 UDP 的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.3.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.3.1.</span> <span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">进程间的通信方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux-%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Linux 的通信方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Linux启动过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%BB%E9%94%81%E4%BA%A7%E7%94%9F%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">死锁产生条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%AD%BB%E9%94%81%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">处理死锁的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#I-O%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8-select-poll-epoll-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">I&#x2F;O多路复用 select poll epoll 的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E6%9C%BA%E5%88%B6"><span class="nav-number">1.3.2.</span> <span class="nav-text">终端机制</span></a></li></ol></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -200,7 +202,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -254,7 +256,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          面试准备
         </h1>
 
         <div class="post-meta-container">
@@ -272,7 +274,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-12 21:53:11" itemprop="dateModified" datetime="2021-03-12T21:53:11+08:00">2021-03-12</time>
+        <time title="修改时间：2021-03-13 23:56:22" itemprop="dateModified" datetime="2021-03-13T23:56:22+08:00">2021-03-13</time>
       </span>
 
   
@@ -285,7 +287,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h1><h2 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h2><h4 id="虚函数的机制"><a href="#虚函数的机制" class="headerlink" title="虚函数的机制"></a>虚函数的机制</h4><p>虚函数是必须在class里面声明的函数，以 virtual 关键字声明。</p>
+        <h1 id="面试准备"><a href="#面试准备" class="headerlink" title="面试准备"></a>面试准备</h1><h2 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h2><a id="more"></a>
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>多态就是不同继承类的对象根据同一消息做出不同的反应，</p>
+<h4 id="虚函数的机制"><a href="#虚函数的机制" class="headerlink" title="虚函数的机制"></a>虚函数的机制</h4><p>虚函数是必须在class里面声明的函数，以 virtual 关键字声明。</p>
 <p>所有虚函数的地址都会放在所属的类的虚函数表 V-table 中，基类中声明的虚函数，继承到子类中依然是虚函数，也会放在子类的虚函数表中。虚函数表的指针存在对象实例的最前。 </p>
 <p>虚函数的创建：</p>
 <p>基类：首先在基类声明中找到所有的虚函数，按照其声明顺序，编码0,1,2,3,4……，然后按照此声明顺序为基类创建一个虚函数表，其内容就是指向这些虚函数的函数指针，按照虚函数声明的顺序将这些虚函数的地址填入虚函数表中</p>
@@ -315,6 +319,11 @@
 <p>static把这个变量的作用域限制在此文件内，如果有其他文件引用此变量会产生引用错误</p>
 <p>静态局部变量只有在程序结束时才会被销毁</p>
 <p>.h文件中一般只放函数声明，防止编译阶段出现重定位错误</p>
+<h4 id="如何限制类的对象只能在堆上创建"><a href="#如何限制类的对象只能在堆上创建" class="headerlink" title="如何限制类的对象只能在堆上创建"></a>如何限制类的对象只能在堆上创建</h4><ol>
+<li>将析构函数设为私有，但会导致无法解决继承问题，析构函数一般是虚函数</li>
+<li>构造函数设置为 protected 并提供一个 public的静态函数来完成构造而不是在类的外部使用 new构造。同时将析构函数也设为 protected </li>
+</ol>
+<h4 id="限制类的对象只能在栈上创建"><a href="#限制类的对象只能在栈上创建" class="headerlink" title="限制类的对象只能在栈上创建"></a>限制类的对象只能在栈上创建</h4><p>将 operator new() 函数设为私有</p>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>空类占一字节，编译时自动生成6个成员函数：构造函数，析构函数，拷贝函数，赋值运算符，取址运算符，取址运算符常量版本</p>
 <p>拷贝构造函数必须为引用是为了防止无限次的递归调用构造函数造成栈溢出</p>
 <h4 id="C-类对象的初始化顺序"><a href="#C-类对象的初始化顺序" class="headerlink" title="C++ 类对象的初始化顺序"></a>C++ 类对象的初始化顺序</h4><p>-&gt; 基类的构造函数</p>
@@ -329,6 +338,33 @@
 <p>new 申请空间时，无需指定分配空间的大小，malloc需要指明空间的大小</p>
 <p>new 分配失败会抛出bad-alloc 异常，malloc 会返回空指针</p>
 <p>delete 首先执行该对象的析构函数，之后调用 operator delete 来释放所占的内存空间</p>
+<h4 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h4><p>由于疏忽或者错误导致程序未能释放已经不再使用的内存</p>
+<p>丢失了对该内存的控制</p>
+<h4 id="如何防止内存泄漏"><a href="#如何防止内存泄漏" class="headerlink" title="如何防止内存泄漏"></a>如何防止内存泄漏</h4><ol>
+<li>将内存分配和内存释放封装在类中</li>
+<li>使用智能指针</li>
+</ol>
+<h4 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h4><ol>
+<li>shared_ptr（共享指针）：资源可被多个指针共享。通过use_count() 查看资源所有者的个数，release() 释放所有权。</li>
+<li>unique_ptr （独占指针）：资源只能被一个指针占有，不能拷贝构造和赋值，可以进行移动构造和移动构造赋值，调用 std::move() 函数 </li>
+<li>weak_ptr （弱指针）：指向 共享指针指向的对象，解决 shared_ptr 带来的循环引用问题</li>
+</ol>
+<p>实现方式：计数原理</p>
+<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><h4 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h4><p>创建类或者函数的蓝图或者公式，分为函数模板和类模板</p>
+<h4 id="函数模板与类模板的区别"><a href="#函数模板与类模板的区别" class="headerlink" title="函数模板与类模板的区别"></a>函数模板与类模板的区别</h4><p>函数模板会根据函数的实参来实例化，类模板实例化要在程序中显式指定</p>
+<p>函数模板只能全特化，类模板可以全特化，也可以偏特化</p>
+<h4 id="什么是可变参数模板"><a href="#什么是可变参数模板" class="headerlink" title="什么是可变参数模板"></a>什么是可变参数模板</h4><p>接受可变数目参数的模板函数或者模板类，将可变数目的参数成为参数包，包括模板参数包，函数参数包。</p>
+<h4 id="什么是模板特化，为什么特化？"><a href="#什么是模板特化，为什么特化？" class="headerlink" title="什么是模板特化，为什么特化？"></a>什么是模板特化，为什么特化？</h4><p>因为在某些特定类型的实参，模板并非都合适，并非都能实例化，</p>
+<p>模板在某种特定类型下的具体实现，分为函数模板特化，类模板特化</p>
+<p>全特化：所有模板参数都实例化</p>
+<p>偏特化：部分参数实例化</p>
+<h4 id="静态链接与动态链接"><a href="#静态链接与动态链接" class="headerlink" title="静态链接与动态链接"></a>静态链接与动态链接</h4><p>静态链接：在编译阶段链接，要把调用的函数或者过程链接到可执行文件中，成为可执行文件的一部分，lib 包含在exe文件中。</p>
+<p>动态链接：</p>
+<ol>
+<li>装载时动态链接：编译前明确知道要调用DLL中的哪几个函数，编译时在目标函数中只保留必要的链接信息，而不保留DLL函数的代码。程序执行时，调用函数的时候利用链接信息加载DLL函数代码，主要为了代码共享，全部函数加载进内存</li>
+<li>运行时动态链接，编译之前并不知道会调用哪些DLL函数，在运行过程中根据需要决定调用哪个函数，将调用的函数加载进内存</li>
+</ol>
+<p>动态链接更省内存，并且更新更快。dll</p>
 <h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h3 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h3><p>第一次握手：</p>
 <p>建立连接时，客户端向服务器发送（SYN）请求建立连接包（syn=x），进入SYN_SEND 状态，等待服务器确认。SYN = 同步序列编号</p>
 <p>第二次握手：</p>
@@ -348,7 +384,61 @@
 <h4 id="为什么不用两次握手建立连接（TCP握手为什么需要三次）"><a href="#为什么不用两次握手建立连接（TCP握手为什么需要三次）" class="headerlink" title="为什么不用两次握手建立连接（TCP握手为什么需要三次）"></a>为什么不用两次握手建立连接（TCP握手为什么需要三次）</h4><p>3次握手完成了两个重要的功能，一是双方做好发送数据的准备工作，二是双方就初始序列号进行协商。如果把3次握手改成两次握手，那么可能发生死锁，首先客户端向服务器端发送SYN报文，服务器端收到后向客户端发送SYN和ACK报文，但是ACK报文在传输的过程中可能丢失，此时服务器端认为连接已经建立，开始发送数据，但客户端没有收到ACK报文，认为连接还未建立，忽略服务器端发来的数据，只等待确认报文，而服务器端在发出的分组超时后，重复发出同样的数据，造成死锁。</p>
 <h4 id="如果已经建立了连接，但客户端出故障了怎么办"><a href="#如果已经建立了连接，但客户端出故障了怎么办" class="headerlink" title="如果已经建立了连接，但客户端出故障了怎么办"></a>如果已经建立了连接，但客户端出故障了怎么办</h4><p>TCP设有一个保活计时器，时间通常设为2小时，客户端如果出现故障，服务器端也不会一直等待下去，如果在计时器内没有收到客户端的任何数据，服务器就会每隔75s发出一个探测报文段，如果发送了10个报文段客户端依旧没有发送任何数据，服务器就关闭连接。</p>
 <h4 id="HTTP与HTTPS有什么区别"><a href="#HTTP与HTTPS有什么区别" class="headerlink" title="HTTP与HTTPS有什么区别"></a>HTTP与HTTPS有什么区别</h4><p>HTTP传输的协议都是未加密的，所以非常不安全，https 是由 ssl 和http构建的可进行加密传输，身份认证的网络协议，要比http协议安全。http的默认端口为80，https协议的默认端口为443</p>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2>
+<h4 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h4><p>TCP面向连接，UDP无连接</p>
+<p>TCP是可靠传输，UDP是不可靠传输</p>
+<p>UDP支持多对多相互通信，TCP只支持一对一通信</p>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程是资源分配的基本单位，线程是CPU调度的基本单位</p>
+<p>一个进程可以拥有多个线程，线程没有地址空间，包含在进程的地址空间内。</p>
+<p>同一进程中的线程拥有自己的栈和寄存器，共享数据段，代码段和文件</p>
+<h4 id="进程间的通信方式"><a href="#进程间的通信方式" class="headerlink" title="进程间的通信方式"></a>进程间的通信方式</h4><ol>
+<li>低级通信方式：同步与互斥，PV操作为低级进程通信原语</li>
+<li>高级通信方式：<ul>
+<li>共享存储器系统</li>
+<li>消息传递系统：<ol>
+<li>直接通信：消息队列</li>
+<li>简介通信：信箱通信</li>
+</ol>
+</li>
+<li>管道通信系统或者共享文件系统</li>
+</ul>
+</li>
+</ol>
+<h4 id="Linux-的通信方式"><a href="#Linux-的通信方式" class="headerlink" title="Linux 的通信方式"></a>Linux 的通信方式</h4><ol>
+<li>管道</li>
+<li>信号</li>
+<li>信号量</li>
+<li>消息队列</li>
+<li>共享内存</li>
+<li>套接字</li>
+</ol>
+<h4 id="Linux启动过程"><a href="#Linux启动过程" class="headerlink" title="Linux启动过程"></a>Linux启动过程</h4><ol>
+<li>自检，加载BIOS</li>
+<li>读取MBR （Master Boot Record）</li>
+<li>Boot Loader grub引导装载程序</li>
+<li>加载 kernel 内核进内核</li>
+<li>运行init进程，根据/etc/inittab等文件，运行/etc/rc.d/rc.sysinit 等脚本</li>
+<li>运行 /etc/rc.d/rc.local 脚本</li>
+<li>执行 /bin/login 程序，启动mingetty程序，进入登陆状态</li>
+</ol>
+<h4 id="死锁产生条件"><a href="#死锁产生条件" class="headerlink" title="死锁产生条件"></a>死锁产生条件</h4><ol>
+<li>互斥：一次只有一个进程可以使用一个资源</li>
+<li>占有并等待：</li>
+<li>非抢占：资源是不可抢占的</li>
+<li>循环等待：等待资源的进程之间存在环</li>
+</ol>
+<h4 id="处理死锁的方法"><a href="#处理死锁的方法" class="headerlink" title="处理死锁的方法"></a>处理死锁的方法</h4><ol>
+<li>忽略死锁</li>
+<li>预防死锁：破坏死锁产生的条件之一</li>
+<li>避免死锁：避免系统进入不安全状态，如银行家算法</li>
+<li>检测死锁及解除死锁：进程撤销，资源抢占</li>
+</ol>
+<h4 id="I-O多路复用-select-poll-epoll-的区别"><a href="#I-O多路复用-select-poll-epoll-的区别" class="headerlink" title="I/O多路复用 select poll epoll 的区别"></a>I/O多路复用 select poll epoll 的区别</h4><p>selet 函数监视的文件分3类: writefds, readfds, exceptfds， select函数返回后，轮询所有fds，找到就绪的描述符</p>
+<p>poll 使用一个 pollfd的指针，轮询pollfd来获取就绪的描述符</p>
+<p>epoll </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">三个接口</span><br><span class="line">epoll_create();	</span><br><span class="line">epoll_ctl();<span class="comment">// 注册一个文件描述符</span></span><br><span class="line">epoll_wait();</span><br></pre></td></tr></table></figure>
+<p>一旦基于某个文件描述符准备就绪时，内核会采用类似 call_back 的回调机制，迅速激活这个文件描述符，当进程调用 epoll_wait() 时便的到通知</p>
+<p>IO效率不会随着fd的增加而增加</p>
+<h3 id="终端机制"><a href="#终端机制" class="headerlink" title="终端机制"></a>终端机制</h3>
     </div>
 
     
@@ -356,6 +446,10 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
 
         
 
