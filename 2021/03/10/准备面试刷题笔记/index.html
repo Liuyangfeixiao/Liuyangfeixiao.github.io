@@ -26,14 +26,16 @@
 
   <meta name="description" content="准备面试刷题笔记最小的k个数思路：快速排序，看看排好序的下标是否是 k 1234567891011121314151617&#x2F;&#x2F; 快排模板int quick_sort(int l, int r) &amp;#123;    if (l &#x3D;&#x3D; r) return q[l];    int i &#x3D; l-1, j &#x3D; r+1;    int x &#x3D; q[(l+r &gt;&gt; 1)];    while (i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LiuYang&#39;s Blog">
+<meta property="og:title" content="面试刷题笔记">
 <meta property="og:url" content="http://example.com/2021/03/10/%E5%87%86%E5%A4%87%E9%9D%A2%E8%AF%95%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="LiuYang&#39;s Blog">
 <meta property="og:description" content="准备面试刷题笔记最小的k个数思路：快速排序，看看排好序的下标是否是 k 1234567891011121314151617&#x2F;&#x2F; 快排模板int quick_sort(int l, int r) &amp;#123;    if (l &#x3D;&#x3D; r) return q[l];    int i &#x3D; l-1, j &#x3D; r+1;    int x &#x3D; q[(l+r &gt;&gt; 1)];    while (i">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-10T09:29:50.845Z">
-<meta property="article:modified_time" content="2021-03-10T12:23:53.472Z">
+<meta property="article:modified_time" content="2021-04-17T09:54:43.070Z">
 <meta property="article:author" content="Liuyangfeixiao">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
 
 
@@ -50,7 +52,7 @@
   };
 </script>
 
-  <title> | LiuYang's Blog</title>
+  <title>面试刷题笔记 | LiuYang's Blog</title>
   
 
 
@@ -174,7 +176,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E9%9D%A2%E8%AF%95%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">准备面试刷题笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">最小的k个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">合并二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%9C%B0%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">原地旋转矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E4%BC%97%E6%95%B0"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">二叉树中的众数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">前序与中序构建二叉树</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E9%9D%A2%E8%AF%95%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">准备面试刷题笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E7%9A%84k%E4%B8%AA%E6%95%B0"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">最小的k个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">合并二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%9C%B0%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">原地旋转矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E4%BC%97%E6%95%B0"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">二叉树中的众数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">前序与中序构建二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AB%E6%9C%89%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%E7%9A%84%E5%85%A8%E6%8E%92%E5%88%97"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">含有重复元素的全排列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">合并有序链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">数据流中的中位数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">删除二叉搜索树中的节点</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -187,7 +189,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -200,7 +202,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -254,7 +256,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          面试刷题笔记
         </h1>
 
         <div class="post-meta-container">
@@ -264,10 +266,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-03-10 17:29:50 / 修改时间：20:23:53" itemprop="dateCreated datePublished" datetime="2021-03-10T17:29:50+08:00">2021-03-10</time>
+      <time title="创建时间：2021-03-10 17:29:50" itemprop="dateCreated datePublished" datetime="2021-03-10T17:29:50+08:00">2021-03-10</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-17 17:54:43" itemprop="dateModified" datetime="2021-04-17T17:54:43+08:00">2021-04-17</time>
+      </span>
 
   
 </div>
@@ -280,7 +288,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="准备面试刷题笔记"><a href="#准备面试刷题笔记" class="headerlink" title="准备面试刷题笔记"></a>准备面试刷题笔记</h1><h4 id="最小的k个数"><a href="#最小的k个数" class="headerlink" title="最小的k个数"></a>最小的k个数</h4><p>思路：快速排序，看看排好序的下标是否是 <k or >k</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 快排模板</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span> q[l];</span><br><span class="line">    <span class="keyword">int</span> i = l<span class="number">-1</span>, j = r+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> x = q[(l+r &gt;&gt; <span class="number">1</span>)];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span> (q[--j] &gt; x) ;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) swap(q[i], q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    quik_sort(l, j);</span><br><span class="line">    quick_sort(j+<span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line">对于这种最大的k个数，最小的k个数，增加条件</span><br><span class="line">  	<span class="keyword">int</span> s = j-l+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (k &lt;= s) quick_sort(l, j, k);</span><br><span class="line">	<span class="keyword">else</span> quick_sort(j+<span class="number">1</span>, r, k-s);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 快排模板</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span> q[l];</span><br><span class="line">    <span class="keyword">int</span> i = l<span class="number">-1</span>, j = r+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> x = q[(l+r &gt;&gt; <span class="number">1</span>)];</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        <span class="keyword">while</span>(q[++i] &lt; x);</span><br><span class="line">        <span class="keyword">while</span> (q[--j] &gt; x) ;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j) swap(q[i], q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    quik_sort(l, j);</span><br><span class="line">    quick_sort(j+<span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line">对于这种最大的k个数，最小的k个数，增加条件</span><br><span class="line">  	<span class="keyword">int</span> s = j-l+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (k &lt;= s) <span class="keyword">return</span> quick_sort(l, j, k);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> quick_sort(j+<span class="number">1</span>, r, k-s);</span><br></pre></td></tr></table></figure>
 <p>堆排序，c++默认的大根堆，q.top()是最前面的数</p>
 <h4 id="合并二叉树"><a href="#合并二叉树" class="headerlink" title="合并二叉树"></a>合并二叉树</h4><p>递归<strong>前序遍历</strong>二叉树，当某一方为空，返回另一方，双方都不为空时构造新的节点，构造这个节点的左子树和右子树，最后返回这个节点。</p>
 <h4 id="原地旋转矩阵"><a href="#原地旋转矩阵" class="headerlink" title="原地旋转矩阵"></a>原地旋转矩阵</h4><p>要用O(1)的空间复杂度，我们可以从外到里一层一层交换节点，$layer = n/2$ ，每层的最后一个节点无需交换，因为已经交换过。</p>
@@ -293,6 +301,21 @@
 <p>根据当前遍历的节点的值来更新次数以及最大值</p>
 <h4 id="前序与中序构建二叉树"><a href="#前序与中序构建二叉树" class="headerlink" title="前序与中序构建二叉树"></a>前序与中序构建二叉树</h4><p>同样通过前序遍历来解决，中序根节点前为左子树，后为右子树，我们可以得到左子树与右子树大小，用这个更新需要遍历的前序区间与中序区间</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pre_left, pre_right, in_left, in_right;</span><br></pre></td></tr></table></figure>
+<h4 id="含有重复元素的全排列"><a href="#含有重复元素的全排列" class="headerlink" title="含有重复元素的全排列"></a>含有重复元素的全排列</h4><p>首先对数组进行排序，之后一个一个数字填充</p>
+<p>回溯的dfs</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 核心代码</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i != start &amp;&amp; nums[start] == nums[i])&#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(nums[satrt], nums[i]);</span><br><span class="line">    dfs(nums, start+<span class="number">1</span>, end)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="合并有序链表"><a href="#合并有序链表" class="headerlink" title="合并有序链表"></a>合并有序链表</h4><p>就是归并排序的变形</p>
+<p>模板还是归并排序</p>
+<h4 id="数据流中的中位数"><a href="#数据流中的中位数" class="headerlink" title="数据流中的中位数"></a>数据流中的中位数</h4><p>维护两个堆，一个大根堆，一个小根堆，分别存放数据的前半部分和后半部分</p>
+<p>元素加入时动态维护</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; cmax;</span><br><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; cmin;</span><br><span class="line"></span><br><span class="line">cmax.push(num);</span><br><span class="line">cmin.push(cmax.top()), cmax.pop();</span><br><span class="line"><span class="keyword">if</span> (cmax.size() &lt; cmin.size()) &#123;</span><br><span class="line">    cmax.push(cmin.top()), cmin.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="删除二叉搜索树中的节点"><a href="#删除二叉搜索树中的节点" class="headerlink" title="删除二叉搜索树中的节点"></a>删除二叉搜索树中的节点</h4><p>分情况讨论：</p>
+<ol>
+<li>没有左右节点</li>
+<li>有左节点</li>
+<li>有右节点</li>
+<li>左右节点</li>
+</ol>
 
     </div>
 
@@ -301,6 +324,10 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+          </div>
 
         
 
@@ -311,6 +338,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/04/17/LeetCode220-%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0III/" rel="next" title="LeetCode220-存在重复元素III">
+                  LeetCode220-存在重复元素III <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
